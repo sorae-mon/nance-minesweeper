@@ -70,6 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       //ctrl and left click
       square.oncontextmenu = function(e) {
+if (squares[i].classList.contains('bomb')){
+    bombAmount = 148
+    for (let i = 0; i < squares.length; i++) 
+        if (squares[i].classList.contains('bomb')) 
+            addFlag(squares[i])
+    return;
+}
         e.preventDefault()
         addFlag(square)
       }
